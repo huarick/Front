@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<script src="js/sessionStorage.js"></script>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+</head>
+<body>
+<script>
+
+
+
+    //声明对象
+
+    var pageProductsUI = new Object();
+    var pageProducts = new Object();
+    var special = new Object();
+    var displayOrderBy = new Object();
+    pageProductsUI.pageProducts = pageProducts;
+    pageProductsUI.pageProducts.productsData = {};
+    pageProductsUI.pageProducts.displayOrderBy = displayOrderBy;
+
+    pageProductsUI.pageProducts.productsScrollY = 1;
+    pageProductsUI.pageProducts.pageIndex = 2;
+    pageProductsUI.pageProducts.searchWord = "3";
+    pageProductsUI.pageProducts.special = special;
+    pageProductsUI.pageProducts.special.specialId = 4;
+    pageProductsUI.pageProducts.displayOrderBy.isNewArrived = true;
+    pageProductsUI.pageProducts.displayOrderBy.orderByPriceType = 0;
+
+    //调用创建的方法
+    var productSessionStorage = new ProductSessionStorage(pageProductsUI);
+
+    //存储JSON
+    productSessionStorage.setForSessionStorage();
+    //获取JSON
+    productSessionStorage.getForSessionStorage();
+    //在console查看效果
+    console.log(pageProductsUI);
+
+
+
+</script>
+</body>
+</html>
